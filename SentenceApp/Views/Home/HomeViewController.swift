@@ -10,74 +10,73 @@ import UIKit
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Outlets
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var offenseTextField: UITextField!
     @IBOutlet weak var severityTextField: UITextField!
     @IBOutlet weak var intentTextField: UITextField!
+    
+    @IBOutlet weak var offense2Label: UILabel!
+    @IBOutlet weak var offense2TextField: UITextField!
+    @IBOutlet weak var severity2Label: UILabel!
+    @IBOutlet weak var severity2TextField: UITextField!
+    @IBOutlet weak var intent2Label: UILabel!
+    @IBOutlet weak var intent2TextField: UITextField!
+    
     @IBOutlet weak var recommendTextView: UITextView!
     
+    // variable
+    var is2OffenseFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // set offender name to hide
-        firstNameLabel.isHidden = true
-        firstNameTextField.isHidden = true
-        lastNameLabel.isHidden = true
-        lastNameTextField.isHidden = true
+        // set offense 2 to hide
+        offense2Label.isHidden = true
+        offense2TextField.isHidden = true
+        severity2Label.isHidden = true
+        severity2TextField.isHidden = true
+        intent2Label.isHidden = true
+        intent2TextField.isHidden = true
         
         // keyboard setup
-        firstNameTextField.delegate = self
-        lastNameTextField.delegate = self
         offenseTextField.delegate = self
         severityTextField.delegate = self
         intentTextField.delegate = self
+        offense2TextField.delegate = self
+        severity2TextField.delegate = self
+        intent2TextField.delegate = self
     }
     
+    
+    
     // MARK: Actions
-    @IBAction func repeatOffenderButton(_ sender: UIButton) {
-        // set offender name to show
-        firstNameLabel.isHidden = false
-        firstNameTextField.isHidden = false
-        lastNameLabel.isHidden = false
-        lastNameTextField.isHidden = false
-        // ===============FOR TESTING===============
-//        if isValidOffender(){
-//            // run different model here with offender
-//        }
-//        else{
-//            showMessage(message: "Invalid name", buttonCaption: "Try again", controller: self)
-//        }
-        // ===============FOR TESTING===============
+    @IBAction func offense2Button(_ sender: UIButton) {
+        // set offense 2 to show up
+        offense2Label.isHidden = false
+        offense2TextField.isHidden = false
+        severity2Label.isHidden = false
+        severity2TextField.isHidden = false
+        intent2Label.isHidden = false
+        intent2TextField.isHidden = false
+        
+        // run different model
+        is2OffenseFlag = true
     }
+
     
     @IBAction func recommendButton(_ sender: UIButton) {
         
-        if isRepeatOffender(){
-            print("==================FOR TESTING==================")
-            print("isRepeatOffender")
-            print("==================FOR TESTING==================")
-            
-            if isValidOffender(){
-                if isValidForm(){
-                    // run different models
-                }
-                else{
-                    showMessage(message: "inside repeat offender, isValidOffender, and isValidForm", buttonCaption: "Close", controller: self)
-                }
+        if is2OffenseFlag == true {
+            if isValidForm2Offense(){
+                showMessage(message: "valid 2 offense", buttonCaption: "close", controller: self)
             }
             else{
-                showMessage(message: "inside isRepeatOffender and else of isValidOffender", buttonCaption: "Close", controller: self)
+                showMessage(message: "Whoops! It seems like there are some empty fields in the form. Double-check and make sure nothing's left blank.", buttonCaption: "Close", controller: self)
             }
-            
-            resetForm()
+            // resetForm()
         }
         else{
             
-            if isValidForm(){
+            if isValidForm1Offense(){
                 let offenseInput = offenseTextField.text!
                 let severiyInput = Int(severityTextField.text!)!
                 let intentInput = intentTextField.text!
@@ -104,6 +103,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             else{
                 showMessage(message: "Whoops! It seems like there are some empty fields in the form. Double-check and make sure nothing's left blank.", buttonCaption: "Close", controller: self)
             }
+            resetForm()
         }
     }
     
@@ -120,7 +120,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Form Validations
-    func isValidForm() -> Bool{
+    func isValidForm1Offense() -> Bool{
         guard let offense = offenseTextField.text, !offense.isEmpty else{
             return false
         }
@@ -130,41 +130,100 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         guard let intent = intentTextField.text, !intent.isEmpty else{
             return false
         }
-        return true
-    }
-    
-    func isValidOffender() -> Bool{
-        guard let firstName = firstNameTextField.text, !firstName.isEmpty else{
+        
+        let characterRegEx = "^[a-zA-Z]+$"
+        let characterPredicate = NSPredicate(format: "SELF MATCHES %@", characterRegEx)
+        
+        let numberRegEx = "^[0-9]*$"
+        let numberPredicate = NSPredicate(format: "SELF MATCHES %@", numberRegEx)
+        
+        if !characterPredicate.evaluate(with: offense){
+            showMessage(message: "Offense shouldn't contain a number.", buttonCaption: "Close", controller: self)
             return false
         }
-        guard let lastName = lastNameTextField.text, !lastName.isEmpty else{
+        else if !numberPredicate.evaluate(with: severity){
+            showMessage(message: "Severity shouldn't contain a character.", buttonCaption: "Close", controller: self)
+            return false
+        }
+        else if !characterPredicate.evaluate(with: intent){
+            showMessage(message: "Intent shouldn't contain a number.", buttonCaption: "Close", controller: self)
             return false
         }
         
-        // add more validations
         return true
     }
     
-    func isRepeatOffender() -> Bool{
-        if(firstNameLabel.isHidden == false && firstNameTextField.isHidden == false && lastNameLabel.isHidden == false && lastNameTextField.isHidden == false){
-            return true
-        }
-        else{
+    func isValidForm2Offense() -> Bool{
+        guard let offense1 = offenseTextField.text, !offense1.isEmpty else{
             return false
         }
+        guard let severity1 = severityTextField.text, !severity1.isEmpty else{
+            return false
+        }
+        guard let intent1 = intentTextField.text, !intent1.isEmpty else{
+            return false
+        }
+        
+        guard let offense2 = offense2TextField.text, !offense2.isEmpty else{
+            return false
+        }
+        guard let severity2 = severity2TextField.text, !severity2.isEmpty else{
+            return false
+        }
+        guard let intent2 = intent2TextField.text, !intent2.isEmpty else{
+            return false
+        }
+        
+        let characterRegEx = "^[a-zA-Z]+$"
+        let characterPredicate = NSPredicate(format: "SELF MATCHES %@", characterRegEx)
+        
+        let numberRegEx = "^[0-9]*$"
+        let numberPredicate = NSPredicate(format: "SELF MATCHES %@", numberRegEx)
+        
+        if !characterPredicate.evaluate(with: offense1){
+            showMessage(message: "Offense shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            return false
+        }
+        else if !numberPredicate.evaluate(with: severity1){
+            showMessage(message: "Severity shouldn't contain a character.", buttonCaption: "Close", controller: self)
+            return false
+        }
+        else if !characterPredicate.evaluate(with: intent1){
+            showMessage(message: "Intent shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            return false
+        }
+        else if !characterPredicate.evaluate(with: offense2){
+            showMessage(message: "Offense shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            return false
+        }
+        else if !numberPredicate.evaluate(with: severity2){
+            showMessage(message: "Severity shouldn't contain a character.", buttonCaption: "Close", controller: self)
+            return false
+        }
+        else if !characterPredicate.evaluate(with: intent2){
+            showMessage(message: "Intent shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            return false
+        }
+        
+        return true
     }
+    
     
     func resetForm(){
-        firstNameTextField.text = nil
-        lastNameTextField.text = nil
-//        offenseTextField.text = nil
-//        severityTextField.text = nil
-//        intentTextField.text = nil
+        offenseTextField.text = nil
+        severityTextField.text = nil
+        intentTextField.text = nil
         
-        // set offender name to hide
-        firstNameLabel.isHidden = true
-        firstNameTextField.isHidden = true
-        lastNameLabel.isHidden = true
-        lastNameTextField.isHidden = true
+        offense2TextField.text = nil
+        severity2TextField.text = nil
+        intent2TextField.text = nil
+        
+        // set offense 2 to hide
+        offense2Label.isHidden = true
+        offense2TextField.isHidden = true
+        severity2Label.isHidden = true
+        severity2TextField.isHidden = true
+        intent2Label.isHidden = true
+        intent2TextField.isHidden = true
     }
 }
