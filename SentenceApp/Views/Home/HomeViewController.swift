@@ -84,6 +84,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 // ===================TESTING MODEL===================
                 let sentenceRecommend = noRepeatOffenderSentenceModel(offense: offenseInput, severity: severiyInput, intent: intentInput)!.Sentence
                 let durationRecommend = noRepeatOffenderDurationModel(offense: offenseInput, severity: severiyInput, intent: intentInput, sentence: sentenceRecommend)!.Period_in_Months
+                
+                // automaticTrainingDuration model
+//                let durationRecommend = noRepeatOffenderDurationModel(offense: offenseInput, severity: severiyInput, intent: intentInput, sentence: sentenceRecommend)!.duration
                 // ===================TESTING MODEL===================
                 
                 // ==================FOR TESTING==================
@@ -95,8 +98,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 print("==================FOR TESTING==================")
                 // ==================FOR TESTING==================
                 
-                // show recommendation in TextView
-                recommendTextView.text = "Sentence\t\t\tPeriod in Months\n" + sentenceRecommend + "\t\t\t" + String(format: "%.2f", durationRecommend)
+                if(durationRecommend < 0){
+                    // show recommendation in TextView
+                    recommendTextView.text = "Sentence\t\t\tPeriod in Months\n" + sentenceRecommend + "\t\t\t" + "N/A"
+                }
+                else{
+                    // show recommendation in TextView
+                    recommendTextView.text = "Sentence\t\t\tPeriod in Months\n" + sentenceRecommend + "\t\t\t" + String(format: "%.2f", durationRecommend)
+                }
                 
                 resetForm()
             }

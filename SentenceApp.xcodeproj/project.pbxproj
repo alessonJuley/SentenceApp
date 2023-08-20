@@ -17,6 +17,8 @@
 		3F5ADE432A1679AF008C6322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5ADE412A1679AF008C6322 /* Main.storyboard */; };
 		3F5ADE452A1679B0008C6322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5ADE442A1679B0008C6322 /* Assets.xcassets */; };
 		3F5ADE482A1679B0008C6322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5ADE462A1679B0008C6322 /* LaunchScreen.storyboard */; };
+		3F978B512A921E1700037063 /* manualTrainingDurationModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F978B502A921E1700037063 /* manualTrainingDurationModel.mlmodel */; };
+		3F978B532A921E2100037063 /* AutomaticTrainingDuration.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F978B522A921E2100037063 /* AutomaticTrainingDuration.mlmodel */; };
 		3F9A5CDA2A8CB55B001FC004 /* SentenceClassifier2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A5CD92A8CB55B001FC004 /* SentenceClassifier2.mlmodel */; };
 		3FE842A32A8A1B20003A743F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE842A22A8A1B20003A743F /* HomeViewController.swift */; };
 		3FE842A72A8A1B8D003A743F /* SentenceRecommend.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3FE842A52A8A1B8D003A743F /* SentenceRecommend.mlmodel */; };
@@ -41,6 +43,8 @@
 		3F5ADE442A1679B0008C6322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F5ADE472A1679B0008C6322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F5ADE492A1679B0008C6322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F978B502A921E1700037063 /* manualTrainingDurationModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = manualTrainingDurationModel.mlmodel; sourceTree = "<group>"; };
+		3F978B522A921E2100037063 /* AutomaticTrainingDuration.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AutomaticTrainingDuration.mlmodel; sourceTree = "<group>"; };
 		3F9A5CD92A8CB55B001FC004 /* SentenceClassifier2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentenceClassifier2.mlmodel; sourceTree = "<group>"; };
 		3FE842A22A8A1B20003A743F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3FE842A52A8A1B8D003A743F /* SentenceRecommend.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentenceRecommend.mlmodel; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 		3FE842A42A8A1B55003A743F /* CoreML */ = {
 			isa = PBXGroup;
 			children = (
+				3F978B522A921E2100037063 /* AutomaticTrainingDuration.mlmodel */,
+				3F978B502A921E1700037063 /* manualTrainingDurationModel.mlmodel */,
 				3F9A5CD92A8CB55B001FC004 /* SentenceClassifier2.mlmodel */,
 				3FE842BD2A8A7119003A743F /* DurationRecommender.mlmodel */,
 				3FE842BB2A8A6DDA003A743F /* SentenceDurationClassifier.mlmodel */,
@@ -249,6 +255,8 @@
 				3FE842AA2A8A1FC1003A743F /* Functions.swift in Sources */,
 				3FE842A32A8A1B20003A743F /* HomeViewController.swift in Sources */,
 				3F1D9AA22A41E555003EF407 /* OnboardingViewController.swift in Sources */,
+				3F978B532A921E2100037063 /* AutomaticTrainingDuration.mlmodel in Sources */,
+				3F978B512A921E1700037063 /* manualTrainingDurationModel.mlmodel in Sources */,
 				3FE842A82A8A1B8D003A743F /* SentenceDurationRegressor.mlmodel in Sources */,
 				3FE842BC2A8A6DDA003A743F /* SentenceDurationClassifier.mlmodel in Sources */,
 				3F1D9AA52A41E8AC003EF407 /* UIView+Extension.swift in Sources */,
