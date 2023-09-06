@@ -456,10 +456,10 @@
             </objects>
             <point key="canvasLocation" x="2483" y="408"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="9ag-Hw-Pjz">
             <objects>
-                <viewController id="8Fp-s9-Uy6" sceneMemberID="viewController">
+                <viewController id="8Fp-s9-Uy6" customClass="MainViewController" customModule="SentenceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hg4-9L-9Fu" userLabel="Base View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -604,6 +604,9 @@
                                                                 <rect key="frame" x="15" y="0.0" width="384" height="60"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="gray" image="plus" catalog="system" title="Add second offence" imagePadding="10"/>
+                                                                <connections>
+                                                                    <action selector="addOffence2:" destination="8Fp-s9-Uy6" eventType="touchUpInside" id="v7d-yV-UrH"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -716,6 +719,9 @@
                                                                 <rect key="frame" x="15" y="0.0" width="384" height="48"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="gray" image="plus" catalog="system" title="Add third offence" imagePadding="10"/>
+                                                                <connections>
+                                                                    <action selector="addOffence3:" destination="8Fp-s9-Uy6" eventType="touchUpInside" id="MTa-fd-VBo"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -837,6 +843,9 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="recommendOutput:" destination="8Fp-s9-Uy6" eventType="touchUpInside" id="rXa-Bk-Eq7"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -905,6 +914,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cwf-m3-tsw"/>
+                    <connections>
+                        <outlet property="addOffence2Button" destination="wS0-KS-iwK" id="trf-ex-2KC"/>
+                        <outlet property="addOffence3Button" destination="Chw-5g-NWj" id="Lvi-ro-hvF"/>
+                        <outlet property="addOffence3View" destination="hk6-Nb-7hQ" id="ySE-5E-gGl"/>
+                        <outlet property="intent1TextField" destination="RxU-uL-fBM" id="6Nq-TN-P9u"/>
+                        <outlet property="intent2TextField" destination="tj4-Q0-Fh7" id="IHj-tQ-9qa"/>
+                        <outlet property="intent3TextField" destination="2E1-1i-1GC" id="wRN-w1-mhQ"/>
+                        <outlet property="offence1TextField" destination="0o2-lC-bkK" id="43U-yv-2Re"/>
+                        <outlet property="offence2TextField" destination="Q3c-3o-s7z" id="JWR-lK-CXe"/>
+                        <outlet property="offence2View" destination="TJA-dN-RMO" id="UMh-DJ-eoM"/>
+                        <outlet property="offence3TextField" destination="4U7-Zt-QHu" id="rNF-Qw-BAA"/>
+                        <outlet property="offence3View" destination="Uh3-wg-Ke6" id="Owb-UJ-9fD"/>
+                        <outlet property="outputTextView" destination="MHl-Ca-qys" id="AEU-cp-Cqv"/>
+                        <outlet property="remand1TextField" destination="3bT-jp-jlI" id="V4m-ar-B7J"/>
+                        <outlet property="remand2TextField" destination="xVs-ND-sMr" id="u0o-F8-wFG"/>
+                        <outlet property="remand3TextField" destination="NOG-wF-Orp" id="4Lu-an-y6n"/>
+                        <outlet property="severity1TextField" destination="EQf-8A-M8U" id="t1E-wy-ZUv"/>
+                        <outlet property="severity2TextField" destination="UUT-oz-nK9" id="aDV-B6-ZNW"/>
+                        <outlet property="severity3TextField" destination="L9I-b7-zkz" id="PSQ-kP-cux"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyI-ai-s9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
