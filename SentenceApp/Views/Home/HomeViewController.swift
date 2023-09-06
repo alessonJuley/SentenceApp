@@ -7,12 +7,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITextFieldDelegate {
+class HomeViewController: UIViewController, UITextFieldDelegate{
     
     // MARK: Outlets
     @IBOutlet weak var offenseTextField: UITextField!
     @IBOutlet weak var severityTextField: UITextField!
     @IBOutlet weak var intentTextField: UITextField!
+    
+    
+    @IBOutlet weak var offense2View: UIView!
     
     @IBOutlet weak var offense2Label: UILabel!
     @IBOutlet weak var offense2TextField: UITextField!
@@ -30,12 +33,17 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // set offense 2 to hide
-        offense2Label.isHidden = true
-        offense2TextField.isHidden = true
-        severity2Label.isHidden = true
-        severity2TextField.isHidden = true
-        intent2Label.isHidden = true
-        intent2TextField.isHidden = true
+//        offense2Label.isHidden = true
+//        offense2TextField.isHidden = true
+//        severity2Label.isHidden = true
+//        severity2TextField.isHidden = true
+//        intent2Label.isHidden = true
+//        intent2TextField.isHidden = true
+        
+        // =====================TESTING HIDE/UNHIDE=====================
+        offense2View.isHidden = true
+        
+        // =====================TESTING HIDE/UNHIDE=====================
         
         // keyboard setup
         offenseTextField.delegate = self
@@ -51,15 +59,28 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     // MARK: Actions
     @IBAction func offense2Button(_ sender: UIButton) {
         // set offense 2 to show up
-        offense2Label.isHidden = false
-        offense2TextField.isHidden = false
-        severity2Label.isHidden = false
-        severity2TextField.isHidden = false
-        intent2Label.isHidden = false
-        intent2TextField.isHidden = false
+//        offense2Label.isHidden = false
+//        offense2TextField.isHidden = false
+//        severity2Label.isHidden = false
+//        severity2TextField.isHidden = false
+//        intent2Label.isHidden = false
+//        intent2TextField.isHidden = false
         
-        // run different model
-        is2OffenseFlag = true
+        // =====================TESTING HIDE/UNHIDE=====================
+        if(offense2View.tag == 0){
+            offense2View.tag = 1
+            offense2View.isHidden = true
+        }
+        else{
+            offense2View.tag = 0
+            offense2View.isHidden = false
+            // run different model
+            is2OffenseFlag = true
+        }
+        // =====================TESTING HIDE/UNHIDE=====================
+        
+//        // run different model
+//        is2OffenseFlag = true
     }
 
     
@@ -100,11 +121,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 
                 if(durationRecommend < 0){
                     // show recommendation in TextView
-                    recommendTextView.text = "Sentence\t\t\tPeriod in Months\n" + sentenceRecommend + "\t\t\t" + "N/A"
+                    recommendTextView.text = "Sentence\t\t\tPeriod in days\n" + sentenceRecommend + "\t\t\t" + "N/A"
                 }
                 else{
                     // show recommendation in TextView
-                    recommendTextView.text = "Sentence\t\t\tPeriod in Months\n" + sentenceRecommend + "\t\t\t" + String(format: "%.2f", durationRecommend)
+                    recommendTextView.text = "Sentence\t\t\tPeriod in days\n" + sentenceRecommend + "\t\t\t" + String(format: "%.2f", durationRecommend)
                 }
                 
                 resetForm()
@@ -228,11 +249,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         intent2TextField.text = nil
         
         // set offense 2 to hide
-        offense2Label.isHidden = true
-        offense2TextField.isHidden = true
-        severity2Label.isHidden = true
-        severity2TextField.isHidden = true
-        intent2Label.isHidden = true
-        intent2TextField.isHidden = true
+//        offense2Label.isHidden = true
+//        offense2TextField.isHidden = true
+//        severity2Label.isHidden = true
+//        severity2TextField.isHidden = true
+//        intent2Label.isHidden = true
+//        intent2TextField.isHidden = true
+        
+        // =====================TESTING HIDE/UNHIDE=====================
+        offense2View.isHidden = true
+        // =====================TESTING HIDE/UNHIDE=====================
     }
 }
