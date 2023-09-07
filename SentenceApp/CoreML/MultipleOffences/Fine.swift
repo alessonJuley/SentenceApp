@@ -7,7 +7,7 @@
 
 import CoreML
 
-func FineModel(offence: String, severity: Int, intent: String, sentence: String, sentenceType: String) -> FinesTabularRegressorOutput?{
+func fineModel(offence: String, severity: Int, intent: String, sentence: String, sentenceType: String) -> FinesTabularRegressorOutput?{
     do{
         // instantiate a new object model
         let config = MLModelConfiguration()
