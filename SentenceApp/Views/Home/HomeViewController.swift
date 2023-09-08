@@ -88,10 +88,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate{
         
         if is2OffenseFlag == true {
             if isValidForm2Offense(){
-                showMessage(message: "valid 2 offense", buttonCaption: "close", controller: self)
+                showMessage(message: "valid 2 offense",  controller: self)
             }
             else{
-                showMessage(message: "Whoops! It seems like there are some empty fields in the form. Double-check and make sure nothing's left blank.", buttonCaption: "Close", controller: self)
+                showMessage(message: "Whoops! It seems like there are some empty fields in the form. Double-check and make sure nothing's left blank.",  controller: self)
             }
             // resetForm()
         }
@@ -131,7 +131,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate{
                 resetForm()
             }
             else{
-                showMessage(message: "Whoops! It seems like there are some empty fields in the form. Double-check and make sure nothing's left blank.", buttonCaption: "Close", controller: self)
+                showMessage(message: "Whoops! It seems like there are some empty fields in the form. Double-check and make sure nothing's left blank.",  controller: self)
             }
             resetForm()
         }
@@ -168,15 +168,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate{
         let numberPredicate = NSPredicate(format: "SELF MATCHES %@", numberRegEx)
         
         if !characterPredicate.evaluate(with: offense){
-            showMessage(message: "Offense shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Offense shouldn't contain a number.",  controller: self)
             return false
         }
         else if !numberPredicate.evaluate(with: severity){
-            showMessage(message: "Severity shouldn't contain a character.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Severity shouldn't contain a character.",  controller: self)
             return false
         }
         else if !characterPredicate.evaluate(with: intent){
-            showMessage(message: "Intent shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Intent shouldn't contain a number.",  controller: self)
             return false
         }
         
@@ -211,27 +211,27 @@ class HomeViewController: UIViewController, UITextFieldDelegate{
         let numberPredicate = NSPredicate(format: "SELF MATCHES %@", numberRegEx)
         
         if !characterPredicate.evaluate(with: offense1){
-            showMessage(message: "Offense shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Offense shouldn't contain a number.",  controller: self)
             return false
         }
         else if !numberPredicate.evaluate(with: severity1){
-            showMessage(message: "Severity shouldn't contain a character.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Severity shouldn't contain a character.",  controller: self)
             return false
         }
         else if !characterPredicate.evaluate(with: intent1){
-            showMessage(message: "Intent shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Intent shouldn't contain a number.",  controller: self)
             return false
         }
         else if !characterPredicate.evaluate(with: offense2){
-            showMessage(message: "Offense shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Offense shouldn't contain a number.",  controller: self)
             return false
         }
         else if !numberPredicate.evaluate(with: severity2){
-            showMessage(message: "Severity shouldn't contain a character.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Severity shouldn't contain a character.",  controller: self)
             return false
         }
         else if !characterPredicate.evaluate(with: intent2){
-            showMessage(message: "Intent shouldn't contain a number.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Intent shouldn't contain a number.",  controller: self)
             return false
         }
         
