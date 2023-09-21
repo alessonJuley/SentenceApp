@@ -17,6 +17,7 @@ class OnboardingViewController: UIViewController {
     var imageSlides: [OnboardingSlide] = []
     var currentPage = 0 {
         didSet{
+            onboardingPageControl.currentPage = currentPage
             if currentPage == imageSlides.count - 1{
                 onboardingButton.setTitle("Get Started", for: .normal)
             }
@@ -31,9 +32,9 @@ class OnboardingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         imageSlides = [
-            OnboardingSlide(title: "563.786 GDICT Industry Project", description: "This is a project requirement for GDICT Industry Project.", image: UIImage(named: "Slide1") ?? UIImage()),
-            OnboardingSlide(title: "Made by Alesson Abao", description: "This project used the big bang model due to it being ideal for small projects and commonly applied to projects for learning or experimental purposes.", image: UIImage(named: "Slide2") ?? UIImage()),
-            OnboardingSlide(title: "Dummy Data", description: "The student created the dataset with dummy data. Sentences may not reflect real-life outputs.", image: UIImage(named: "Slide3") ?? UIImage())
+            OnboardingSlide(title: "563.786 GDICT Industry Project", description: "This prototype is a project requirement for GDICT Industry Project, created by a Graduate Diploma student in Software and Web Development.", image: UIImage(named: "Slide1") ?? UIImage()),
+            OnboardingSlide(title: "Features", description: "The key features of this mobile application prototype is to suggest sentences and their respective duration", image: UIImage(named: "Slide2") ?? UIImage()),
+            OnboardingSlide(title: "Developer Note", description: "This prototype uses dummy data, and its outputs may not be accurate. This prototype is just a tool. It is strongly advised to consult with qualified legal professionals for precise guidance.", image: UIImage(named: "Slide3") ?? UIImage()),
         ]
     }
     

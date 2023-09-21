@@ -16,5 +16,13 @@ extension UIView{
             self.layer.cornerRadius = newValue
         }
     }
+    
+    func addBottomBorderWithColor(color: UIColor, width: CGFloat){
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        // width: self.frame.size.width - (left and right constraint value)
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width - 15, height: width)
+        self.layer.addSublayer(border)
+    }
 }
 

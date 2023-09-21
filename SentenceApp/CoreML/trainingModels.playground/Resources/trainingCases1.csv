@@ -1,0 +1,177 @@
+caseID,offence,offenceCategory,offenderID,intent,remandDuration,sentence,sentenceType,duration,totalDuration,fineAmount
+CC0001,Careless driving,1,OAJP1,Negligent,0,Fined ,Single,0,0,776
+CC0002,Exceed speed limit,1,OAML1,Knowing,0,Fined ,Single,0,0,822
+CC0003,Careless driving,1,OANC1,Knowing,1,Disqualified,Single,6,5,0
+CC0004,Careless driving,1,OAFS1,Reckless,2,Supervision,Single,12,10,0
+CC0005,Careless driving,1,OAAL1,Knowing,0,Disqualified,Single,6,6,0
+CC0006,Careless driving,1,OALA3,Reckless,0,Supervision,Single,12,12,0
+CC0007,Careless driving,1,OARW1,Intentional,1,Community work,Single,12,11,0
+CC0008,Exceed speed limit,1,OADV1,Negligent,0,Fined ,Single,6,6,559
+CC0009,Driving unsafe vehicle,1,OAMV1,Knowing,0,Fined ,Single,0,0,751
+CC0010,Exceed speed limit,1,OADG1,Reckless,0,Fined ,Single,0,0,997
+CC0011,Exceed speed limit,1,OARW2,Intentional,0,Fined ,Single,0,0,1000
+CC0012,Driving unsafe vehicle,1,OAMM1,Negligent,0,Fined ,Single,0,0,235
+CC0013,Driving unsafe vehicle,1,OAMF1,Reckless,0,Fined ,Single,0,0,830
+CC0014,Driving unsafe vehicle,1,OATG1,Intentional,0,Fined ,Single,0,0,2000
+CC0015,Assault,2,OAMY1,Reckless,6,Prison,Single,9,3,0
+CC0016,Drink driving,2,OAAQ1,Knowing,1,Prison,Single,3,2,0
+CC0017,Assault,2,OAMG1,Negligent,1,Prison,Single,4,3,0
+CC0018,Drink driving,2,OARM1,Reckless,4,Prison,Single,11,7,0
+CC0019,Assault,2,OAHF1,Knowing,0,Prison,Single,6,6,0
+CC0020,Drink driving,2,OATF1,Negligent,1,Prison,Single,2,1,0
+CC0021,Assault,2,OASH1,Intentional,5,Prison,Single,12,7,0
+CC0022,Drink driving,2,OARL1,Intentional,5,Prison,Single,12,7,0
+CC0023,Aggravated assault,3,OATD1,Negligent,0,Prison,Single,1,1,0
+CC0024,Burglary,3,OAKG1,Negligent,1,Prison,Single,2,1,0
+CC0025,Dangerous driving,3,OARD1,Negligent,1,Prison,Single,3,2,0
+CC0026,Drink driving,3,OALA1,Negligent,0,Prison,Single,12,12,0
+CC0027,Threatening to kill,3,OAFT1,Negligent,2,Prison,Single,4,2,0
+CC0028,Aggravated assault,3,OADA1,Knowing,2,Prison,Single,5,3,0
+CC0029,Burglary,3,OATG2,Knowing,1,Prison,Single,6,5,0
+CC0030,Dangerous driving,3,OAKG2,Knowing,0,Prison,Single,7,7,0
+CC0031,Drink driving,3,OAAT1,Knowing,1,Prison,Single,16,15,0
+CC0032,Threatening to kill,3,OARC1,Knowing,5,Prison,Single,9,4,0
+CC0033,Aggravated assault,3,OADM1,Reckless,0,Prison,Single,11,11,0
+CC0034,Burglary,3,OATT1,Reckless,2,Prison,Single,12,10,0
+CC0035,Dangerous driving,3,OAFB1,Reckless,11,Prison,Single,13,2,0
+CC0036,Drink driving,3,OAAM1,Reckless,12,Prison,Single,20,8,0
+CC0037,Threatening to kill,3,OABF2,Reckless,13,Prison,Single,19,6,0
+CC0038,Aggravated assault,3,OAMR1,Intentional,2,Prison,Single,24,22,0
+CC0039,Burglary,3,OAPA1,Intentional,12,Prison,Single,28,16,0
+CC0040,Dangerous driving,3,OAJP2,Intentional,30,Prison,Single,31,1,0
+CC0041,Drink driving,3,OAHC1,Intentional,22,Prison,Single,35,13,0
+CC0042,Threatening to kill,3,OARC2,Intentional,24,Prison,Single,38,14,0
+CC0043,Aggravated burglary,4,OALA2,Negligent,504,Prison,Single,793,289,0
+CC0044,Crime with firearm,4,OABF1,Negligent,45,Prison,Single,128,83,0
+CC0045,Kidnapping,4,OAJN1,Negligent,993,Prison,Single,1016,23,0
+CC0046,Manslaughter,4,OAQA1,Negligent,57,Prison,Single,196,139,0
+CC0047,Murder,4,OAJB1,Negligent,318,Prison,Single,903,585,0
+CC0048,Aggravated burglary,4,OANP1,Knowing,160,Prison,Single,187,27,0
+CC0049,Crime with firearm,4,OASB1,Knowing,269,Prison,Single,1085,816,0
+CC0050,Kidnapping,4,OACV1,Knowing,16,Prison,Single,83,67,0
+CC0051,Manslaughter,4,OACJ1,Knowing,163,Prison,Single,193,30,0
+CC0052,Murder,4,OAMM2,Knowing,49,Prison,Single,321,272,0
+CC0053,Aggravated burglary,4,OAJG1,Reckless,706,Prison,Single,1151,445,0
+CC0054,Crime with firearm,4,OALB1,Reckless,529,Prison,Single,531,2,0
+CC0055,Kidnapping,4,OABD1,Reckless,174,Prison,Single,388,214,0
+CC0056,Manslaughter,4,OALG1,Reckless,226,Prison,Single,266,40,0
+CC0057,Murder,4,OALK1,Reckless,306,Prison,Single,459,153,0
+CC0058,Aggravated burglary,4,OAAM2,Intentional,251,Prison,Single,312,61,0
+CC0059,Crime with firearm,4,OAMM3,Intentional,15,Prison,Single,106,91,0
+CC0060,Kidnapping,4,OAML2,Intentional,563,Prison,Single,925,362,0
+CC0061,Manslaughter,4,OACU1,Intentional,246,Prison,Single,1198,952,0
+CC0062,Murder,4,OACR1,Intentional,68,Prison,Single,1037,969,0
+CC0063,Careless driving,1,OAJL1,Intentional,0,Community work,Concurrent,7,7,0
+CC0064,Exceed speed limit,1,OAJL1,Intentional,0,Fined ,Concurrent,0,0,400
+CC0065,Driving unsafe vehicle,1,OAOR1,Knowing,0,Fined ,Concurrent,0,0,870
+CC0066,Careless driving,1,OAOR1,Knowing,0,Disqualified,Concurrent,3,3,0
+CC0067,Exceed speed limit,1,OAEC1,Reckless,0,Fined ,Concurrent,0,0,870
+CC0068,Driving unsafe vehicle,1,OAEC1,Reckless,0,Fined ,Concurrent,0,0,1490
+CC0069,Careless driving,1,OAAM3,Negligent,0,Disqualified,Concurrent,4,4,0
+CC0070,Exceed speed limit,1,OAAM3,Negligent,0,Fined ,Concurrent,0,0,200
+CC0071,Driving unsafe vehicle,1,OANB1,Negligent,0,Fined ,Concurrent,0,0,1340
+CC0072,Careless driving,1,OANB1,Knowing,0,Supervision,Concurrent,5,5,0
+CC0073,Exceed speed limit,1,OASJ1,Negligent,0,Fined ,Concurrent,0,0,670
+CC0074,Driving unsafe vehicle,1,OASJ1,Reckless,0,Fined ,Concurrent,0,0,1980
+CC0075,Careless driving,1,OALH1,Negligent,0,Fined ,Concurrent,0,0,2380
+CC0076,Exceed speed limit,1,OALH1,Intentional,0,Fined ,Concurrent,0,0,1000
+CC0077,Driving unsafe vehicle,1,OAIP1,Knowing,0,Fined ,Concurrent,0,0,1670
+CC0078,Careless driving,1,OAIP1,Negligent,0,Disqualified,Concurrent,2,2,0
+CC0079,Exceed speed limit,1,OAMW1,Knowing,0,Fined ,Concurrent,0,0,320
+CC0080,Driving unsafe vehicle,1,OAMW1,Reckless,0,Fined ,Concurrent,0,0,1345
+CC0081,Careless driving,1,OALT1,Knowing,0,Supervision,Concurrent,3,3,0
+CC0082,Exceed speed limit,1,OALT1,Intentional,0,Fined ,Concurrent,0,0,1000
+CC0083,Driving unsafe vehicle,1,OAHP1,Reckless,0,Fined ,Concurrent,0,0,1900
+CC0084,Careless driving,1,OAHP1,Negligent,0,Fined ,Concurrent,0,0,300
+CC0085,Exceed speed limit,1,OAJW1,Reckless,0,Fined ,Concurrent,0,0,780
+CC0086,Driving unsafe vehicle,1,OAJW1,Knowing,0,Fined ,Concurrent,0,0,1000
+CC0087,Careless driving,1,OAAC1,Reckless,0,Supervision,Concurrent,9,9,0
+CC0088,Exceed speed limit,1,OAAC1,Intentional,0,Fined ,Concurrent,0,0,1000
+CC0089,Driving unsafe vehicle,1,OACG1,Intentional,0,Fined ,Concurrent,0,0,2000
+CC0090,Exceed speed limit,1,OACB1,Intentional,0,Fined ,Concurrent,0,0,1000
+CC0091,Driving unsafe vehicle,1,OACB1,Knowing,0,Fined ,Concurrent,0,0,590
+CC0092,Careless driving,1,OAAR1,Intentional,0,Community work,Concurrent,12,12,0
+CC0093,Exceed speed limit,1,OAAR1,Reckless,0,Fined ,Concurrent,0,0,670
+CC0094,Assault,2,OAJP1,Knowing,0,Prison,Concurrent,3,4,0
+CC0095,Assault,2,OAJP1,Reckless,0,Prison,Concurrent,4,4,0
+CC0096,Assault,2,OAML1,Reckless,0,Prison,Cumulative,3,7,0
+CC0097,Burglary,3,OAML1,Knowing,0,Prison,Cumulative,4,7,0
+CC0098,Assault,2,OANC1,Knowing,0,Prison,Cumulative,12,47,0
+CC0099,Drink driving,2,OANC1,Negligent,0,Prison,Cumulative,12,47,0
+CC0100,Assault,2,OANC1,Reckless,0,Prison,Cumulative,24,47,0
+CC0101,Drink driving,2,OAJP1,Negligent,3,Prison,Concurrent,12,9,0
+CC0102,Assault,2,OAJP1,Knowing,3,Prison,Concurrent,12,9,0
+CC0103,Assault,2,OAJP1,Knowing,3,Prison,Concurrent,12,9,0
+CC0104,Robbery,4,OAFS1,Intentional,3,Prison,Cumulative,12,33,0
+CC0105,Murder,4,OAFS1,Intentional,3,Prison,Cumulative,12,33,0
+CC0106,Murder,4,OAFS1,Reckless,3,Prison,Cumulative,12,33,0
+CC0107,Murder,4,OAAL1,Reckless,9,Prison,Single,84,75,0
+CC0108,Driving unsafe vehicle,1,OACG1,Intentional,0,Fined ,Concurrent,0,0,2000
+CC0109,Careless driving,1,OACG1,Negligent,0,Disqualified,Concurrent,3,3,0
+CC0110,Exceed speed limit,1,OACB1,Intentional,0,Fined ,Concurrent,0,0,1000
+CC0111,Driving unsafe vehicle,1,OACB1,Knowing,0,Fined ,Concurrent,0,0,590
+CC0112,Careless driving,1,OAAR1,Intentional,0,Community work,Concurrent,12,12,0
+CC0113,Exceed speed limit,1,OAAR1,Reckless,0,Fined ,Concurrent,0,0,670
+CC0114,Careless driving,1,OARW1,Intentional,0,Community work,Single,12,12,0
+CC0115,Assault,2,OAMY1,Reckless,0,Prison,Single,9,9,0
+CC0116,Drink driving,2,OAAQ1,Knowing,0,Prison,Single,3,3,0
+CC0117,Assault,2,OAMG1,Negligent,0,Prison,Single,4,4,0
+CC0118,Drink driving,2,OARM1,Reckless,0,Prison,Single,11,11,0
+CC0119,Assault,2,OAHF1,Knowing,0,Prison,Single,6,6,0
+CC0120,Drink driving,2,OATF1,Negligent,0,Prison,Single,2,2,0
+CC0121,Assault,2,OASH1,Intentional,0,Prison,Single,12,12,0
+CC0122,Drink driving,2,OARL1,Intentional,0,Prison,Single,12,12,0
+CC0123,Aggravated assault,3,OATD1,Negligent,0,Prison,Single,1,1,0
+CC0124,Burglary,3,OAKG1,Negligent,0,Prison,Single,2,2,0
+CC0125,Dangerous driving,3,OARD1,Negligent,0,Prison,Single,3,3,0
+CC0126,Drink driving,3,OALA1,Negligent,0,Prison,Single,12,12,0
+CC0127,Threatening to kill,3,OAFT1,Negligent,0,Prison,Single,4,4,0
+CC0128,Aggravated assault,3,OADA1,Knowing,0,Prison,Single,5,5,0
+CC0129,Burglary,3,OATG2,Knowing,0,Prison,Single,6,6,0
+CC0130,Dangerous driving,3,OAKG2,Knowing,0,Prison,Single,7,7,0
+CC0131,Drink driving,3,OAAT1,Knowing,0,Prison,Single,16,16,0
+CC0132,Threatening to kill,3,OARC1,Knowing,0,Prison,Single,9,9,0
+CC0133,Aggravated assault,3,OADM1,Reckless,0,Prison,Single,11,11,0
+CC0134,Burglary,3,OATT1,Reckless,0,Prison,Single,12,12,0
+CC0135,Dangerous driving,3,OAFB1,Reckless,0,Prison,Single,13,13,0
+CC0136,Drink driving,3,OAAM1,Reckless,0,Prison,Single,20,20,0
+CC0137,Threatening to kill,3,OABF2,Reckless,0,Prison,Single,19,19,0
+CC0138,Aggravated assault,3,OAMR1,Intentional,0,Prison,Single,24,24,0
+CC0139,Burglary,3,OAPA1,Intentional,0,Prison,Single,28,28,0
+CC0140,Dangerous driving,3,OAJP2,Intentional,0,Prison,Single,31,31,0
+CC0141,Drink driving,3,OAHC1,Intentional,0,Prison,Single,35,35,0
+CC0142,Threatening to kill,3,OARC2,Intentional,0,Prison,Single,38,38,0
+CC0143,Aggravated burglary,4,OALA2,Negligent,0,Prison,Single,793,793,0
+CC0144,Crime with firearm,4,OABF1,Negligent,0,Prison,Single,128,128,0
+CC0145,Kidnapping,4,OAJN1,Negligent,0,Prison,Single,1016,1016,0
+CC0146,Manslaughter,4,OAQA1,Negligent,0,Prison,Single,196,196,0
+CC0147,Murder,4,OAJB1,Negligent,0,Prison,Single,903,903,0
+CC0148,Aggravated burglary,4,OANP1,Knowing,0,Prison,Single,187,187,0
+CC0149,Crime with firearm,4,OASB1,Knowing,0,Prison,Single,1085,1085,0
+CC0150,Kidnapping,4,OACV1,Knowing,0,Prison,Single,83,83,0
+CC0151,Manslaughter,4,OACJ1,Knowing,0,Prison,Single,193,193,0
+CC0152,Murder,4,OAMM2,Knowing,0,Prison,Single,321,321,0
+CC0153,Aggravated burglary,4,OAJG1,Reckless,0,Prison,Single,1151,1151,0
+CC0154,Crime with firearm,4,OALB1,Reckless,0,Prison,Single,531,531,0
+CC0155,Kidnapping,4,OABD1,Reckless,0,Prison,Single,388,388,0
+CC0156,Manslaughter,4,OALG1,Reckless,0,Prison,Single,266,266,0
+CC0157,Murder,4,OALK1,Reckless,0,Prison,Single,459,459,0
+CC0158,Aggravated burglary,4,OAAM2,Intentional,0,Prison,Single,312,312,0
+CC0159,Crime with firearm,4,OAMM3,Intentional,0,Prison,Single,106,106,0
+CC0160,Kidnapping,4,OAML2,Intentional,0,Prison,Single,925,925,0
+CC0161,Manslaughter,4,OACU1,Intentional,0,Prison,Single,1198,1198,0
+CC0162,Murder,4,OACR1,Intentional,0,Prison,Single,1037,1037,0
+CC0163,Assault,2,OAJP1,Knowing,2,Prison,Concurrent,3,2,0
+CC0164,Assault,2,OAJP1,Reckless,2,Prison,Concurrent,4,2,0
+CC0165,Assault,2,OAML1,Reckless,1,Prison,Cumulative,3,3,0
+CC0166,Burglary,3,OAML1,Knowing,1,Prison,Cumulative,4,3,0
+CC0167,Assault,2,OANC1,Knowing,2,Prison,Cumulative,12,42,0
+CC0168,Drink driving,2,OANC1,Negligent,2,Prison,Cumulative,12,42,0
+CC0169,Assault,2,OANC1,Reckless,2,Prison,Cumulative,24,42,0
+CC0170,Drink driving,2,OAJP1,Negligent,3,Prison,Concurrent,12,9,0
+CC0171,Assault,2,OAJP1,Knowing,3,Prison,Concurrent,12,9,0
+CC0172,Assault,2,OAJP1,Knowing,3,Prison,Concurrent,12,9,0
+CC0173,Robbery,4,OAFS1,Intentional,4,Prison,Cumulative,12,24,0
+CC0174,Murder,4,OAFS1,Intentional,4,Prison,Cumulative,12,24,0
+CC0175,Murder,4,OAFS1,Reckless,4,Prison,Cumulative,12,24,0
+CC0176,Murder,4,OAAL1,Reckless,12,Prison,Single,84,72,0

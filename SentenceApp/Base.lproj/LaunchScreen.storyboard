@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconSmall" translatesAutoresizingMaskIntoConstraints="NO" id="xOU-fG-Ykr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="industryProjectIcons" translatesAutoresizingMaskIntoConstraints="NO" id="xOU-fG-Ykr">
                                 <rect key="frame" x="0.0" y="148" width="414" height="614"/>
                             </imageView>
                         </subviews>
@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iconSmall" width="500" height="500"/>
+        <image name="industryProjectIcons" width="1024" height="1024"/>
     </resources>
 </document>

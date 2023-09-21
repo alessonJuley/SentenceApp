@@ -57,16 +57,14 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             
             // change button
             addOffence2Button.tintColor = UIColor.systemRed
-            addOffence2Button.setTitle("Remove offence 2", for: .normal)
+            addOffence2Button.setTitle("Remove offence", for: .normal)
             addOffence2Button.setImage(UIImage(systemName: "minus"), for: .normal)
             
             // view
             offence2View.isHidden = false
-            addOffence3View.isHidden = false
             
             // set
             showForm2 = false
-            showForm3 = true
             
             if(offence3View.isHidden == false){
                 isOneOffence = false
@@ -83,8 +81,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }
         else{
             // change button
-            addOffence2Button.tintColor = UIColor.systemBlue
-            addOffence2Button.setTitle("Add offence 2", for: .normal)
+            addOffence2Button.tintColor = UIColor(hex: "#AB8E63")
+            addOffence2Button.setTitle("Add another offence", for: .normal)
             addOffence2Button.setImage(UIImage(systemName: "plus"), for: .normal)
             
             // view
@@ -110,6 +108,65 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             showForm2 = true
             resetForm()
         }
+        
+        // with third offence
+//        if(showForm2 == true){
+//
+//            // change button
+//            addOffence2Button.tintColor = UIColor.systemRed
+//            addOffence2Button.setTitle("Remove offence 2", for: .normal)
+//            addOffence2Button.setImage(UIImage(systemName: "minus"), for: .normal)
+//
+//            // view
+//            offence2View.isHidden = false
+//            addOffence3View.isHidden = false
+//
+//            // set
+//            showForm2 = false
+//            showForm3 = true
+//
+//            if(offence3View.isHidden == false){
+//                isOneOffence = false
+//                isTwoOffences = false
+//                isThreeOffences = true
+//
+//                showForm3 = false
+//            }
+//            else{
+//                isOneOffence = false
+//                isTwoOffences = true
+//                isThreeOffences = false
+//            }
+//        }
+//        else{
+//            // change button
+//            addOffence2Button.tintColor = UIColor.systemBlue
+//            addOffence2Button.setTitle("Add offence 2", for: .normal)
+//            addOffence2Button.setImage(UIImage(systemName: "plus"), for: .normal)
+//
+//            // view
+//            offence2View.isHidden = true
+//
+//            if(offence3View.isHidden == true){
+//                isOneOffence = true
+//                isTwoOffences = false
+//                isThreeOffences = false
+//
+//                addOffence3View.isHidden = true
+//                resetForm()
+//            }
+//            else{
+//                isOneOffence = false
+//                isTwoOffences = true
+//                isThreeOffences = false
+//
+//                resetForm()
+//            }
+//
+//            // set
+//            showForm2 = true
+//            resetForm()
+//        }
     }
     // MARK: Add offence 3
     @IBAction func addOffence3(_ sender: UIButton) {
@@ -131,7 +188,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }
         else{
             // change button
-            addOffence3Button.tintColor = UIColor.systemBlue
+            addOffence3Button.tintColor = UIColor(hex: "#AB8E63")
             addOffence3Button.setTitle("Add offence 3", for: .normal)
             addOffence3Button.setImage(UIImage(systemName: "plus"), for: .normal)
             
@@ -208,8 +265,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                 resetForm()
             }
             else{
-                // showMessage(message: "Uh-oh! It seems there's an issue with your submission. \n\nPlease review the form and ensure the information in the text box is accurate and complete.",  controller: self)
-                showMessage(message: "Invalid isOneOffence form",  controller: self)
+                showMessage(message: "Uh-oh! It seems there's an issue with your submission. \n\nPlease review the form and ensure the information in the text box is accurate and complete.",  controller: self)
+                // showMessage(message: "Invalid isOneOffence form",  controller: self)
             }
         }
         // MARK: isTwoOffences
@@ -338,8 +395,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             else{
-                // showMessage(message: "Uh-oh! It seems there's an issue with your submission. \n\nPlease review the form and ensure the information in the text box is accurate and complete.",  controller: self)
-                showMessage(message: "Invalid isTwoOffences form",  controller: self)
+                showMessage(message: "Uh-oh! It seems there's an issue with your submission. \n\nPlease review the form and ensure the information in the text box is accurate and complete.",  controller: self)
+                // showMessage(message: "Invalid isTwoOffences form",  controller: self)
             }
         }
         // MARK: isThreeOffences
@@ -520,22 +577,26 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             }
             
             if(!characterPredicate.evaluate(with: offence1)){
-                showMessage(message: "[isOneOffence] Offence1 input should only contain letters.",  controller: self)
+                //showMessage(message: "[isOneOffence] Offence1 input should only contain letters.",  controller: self)
+                showMessage(message: "Offence input should only contain letters", controller: self)
                 
                 return false
             }
             else if(!severityNumberPredicate.evaluate(with: severity1)){
-                showMessage(message: "[isOneOffence] Severity1 input should not contain a letter. Please choose from 1 (least severe) to 4 (most severe).",  controller: self)
+                // showMessage(message: "[isOneOffence] Severity1 input should not contain a letter. Please choose from 1 (least severe) to 4 (most severe).",  controller: self)
+                showMessage(message: "Severity input should not contain a letter. Please choose from 1 (least severe) to 4 (most severe).", controller: self)
                 
                 return false
             }
             else if(intent1.lowercased() != "intentional" && intent1.lowercased() != "reckless" && intent1.lowercased() != "knowing" && intent1.lowercased() != "negligent"){
-                showMessage(message: "[isOneOffence] Please choose among the following intent1 inputs: \n Intentional\n Reckless\n Knowing\n Negligent\n",  controller: self)
+                // showMessage(message: "[isOneOffence] Please choose among the following intent1 inputs: \n Intentional\n Reckless\n Knowing\n Negligent\n",  controller: self)
+                showMessage(message: "Please choose among the following intent inputs: \n Intentional\n Reckless\n Knowing\n Negligent\n", controller: self)
                 
                 return false
             }
             else if(!numberPredicate.evaluate(with: remand1TextField.text)){
-                showMessage(message: "[isOneOffence] Remand1 should not contain a letter. Please input the duration the offender is in custody before sentence in months.",  controller: self)
+                // showMessage(message: "[isOneOffence] Remand1 should not contain a letter. Please input the duration the offender is in custody before sentence in months.",  controller: self)
+                showMessage(message: "Remand should not contain a letter. Please input the duration the offender is in custody before sentence in months.", controller: self)
                 
                 return false
             }
@@ -564,43 +625,51 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                 }
                 // ===========================offence 1===========================
                 if(!characterPredicate.evaluate(with: offence1)){
-                    showMessage(message: "[isTwoOffences] Offence1 input should only contain letters.",  controller: self)
+                    // showMessage(message: "[isTwoOffences] Offence1 input should only contain letters.",  controller: self)
+                    showMessage(message: "First offence input should only contain letters", controller: self)
                     
                     return false
                 }
                 else if(!severityNumberPredicate.evaluate(with: severity1)){
-                    showMessage(message: "[isTwoOffences] Severity1 input should not contain a letter. Please choose from 1 (least severe) to 4 (most severe).",  controller: self)
+                    // showMessage(message: "[isTwoOffences] Severity1 input should not contain a letter. Please choose from 1 (least severe) to 4 (most severe).",  controller: self)
+                    showMessage(message: "First severity input should not contain a letter. Please choose from 1 (least severe) to 4 (most severe).", controller: self)
                     
                     return false
                 }
                 else if(intent1.lowercased() != "intentional" && intent1.lowercased() != "reckless" && intent1.lowercased() != "knowing" && intent1.lowercased() != "negligent"){
-                    showMessage(message: "[isTwoOffences] Please choose among the following intent1 inputs: \n Intentional\n Reckless\n Knowing\n Negligent\n",  controller: self)
+                    // showMessage(message: "[isTwoOffences] Please choose among the following intent1 inputs: \n Intentional\n Reckless\n Knowing\n Negligent\n",  controller: self)
+                    showMessage(message: "Please choose among the following first intent inputs: \n Intentional\n Reckless\n Knowing\n Negligent\n", controller: self)
                     
                     return false
                 }
                 else if(!numberPredicate.evaluate(with: remand1TextField.text)){
-                    showMessage(message: "[isTwoOffences] Remand1 should not contain a letter. Please input the duration the offender is in custody before sentence in months.",  controller: self)
+                    // showMessage(message: "[isTwoOffences] Remand1 should not contain a letter. Please input the duration the offender is in custody before sentence in months.",  controller: self)
+                    showMessage(message: "First remand input should not contain a letter. Please input the duration the offender is in custody before sentence in months.", controller: self)
                     
                     return false
                 }
                 // ===========================offence 2===========================
                 else if(!characterPredicate.evaluate(with: offence2)){
-                    showMessage(message: "[isTwoOffences] Offence2 input should only contain letters.",  controller: self)
+                    // showMessage(message: "[isTwoOffences] Offence2 input should only contain letters.",  controller: self)
+                    showMessage(message: "Second offence input should only contain letters", controller: self)
                     
                     return false
                 }
                 else if(!severityNumberPredicate.evaluate(with: severity2)){
-                    showMessage(message: "[isTwoOffences] Severity2 input should not contain a letter. Please choose from 1 (least severe) to 4 (most severe).",  controller: self)
+                    // showMessage(message: "[isTwoOffences] Severity2 input should not contain a letter. Please choose from 1 (least severe) to 4 (most severe).",  controller: self)
+                    showMessage(message: "Second severity input should not contain a letter. Please choose from 1 (least severe) to 4 (most severe).", controller: self)
                     
                     return false
                 }
                 else if(intent2.lowercased() != "intentional" && intent2.lowercased() != "reckless" && intent2.lowercased() != "knowing" && intent2.lowercased() != "negligent"){
-                    showMessage(message: "[isTwoOffences] Please choose among the following intent2 inputs: \n Intentional\n Reckless\n Knowing\n Negligent\n",  controller: self)
+                    // showMessage(message: "[isTwoOffences] Please choose among the following intent2 inputs: \n Intentional\n Reckless\n Knowing\n Negligent\n",  controller: self)
+                    showMessage(message: "Please choose among the following second intent inputs: \n Intentional\n Reckless\n Knowing\n Negligent\n", controller: self)
                     
                     return false
                 }
                 else if(!numberPredicate.evaluate(with: remand2TextField.text)){
-                    showMessage(message: "[isTwoOffences] Remand2 should not contain a letter. Please input the duration the offender is in custody before sentence in months.",  controller: self)
+                    // showMessage(message: "[isTwoOffences] Remand2 should not contain a letter. Please input the duration the offender is in custody before sentence in months.",  controller: self)
+                    showMessage(message: "Second remand input should not contain a letter. Please input the duration the offender is in custody before sentence in months.", controller: self)
                     
                     return false
                 }
@@ -808,11 +877,17 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     // MARK: resetForm()
     func resetForm(){
         if(isOneOffence == true && isTwoOffences == false && isThreeOffences == false){
+//            if(offence3View.isHidden == true){
+//                offence3TextField.text = nil
+//                severity3TextField.text = nil
+//                intent3TextField.text = nil
+//                remand3TextField.text = nil
+//            }
             if(offence3View.isHidden == true){
-                offence3TextField.text = nil
-                severity3TextField.text = nil
-                intent3TextField.text = nil
-                remand3TextField.text = nil
+                offence2TextField.text = nil
+                severity2TextField.text = nil
+                intent2TextField.text = nil
+                remand2TextField.text = nil
             }
             else{
                 offence1TextField.text = nil
@@ -835,5 +910,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                 remand2TextField.text = nil
             }
         }
+
     }
 }
