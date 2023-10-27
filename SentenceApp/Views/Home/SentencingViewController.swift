@@ -35,6 +35,7 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
     var isTwoOffences: Bool = false
     var showForm2: Bool = false
     
+    // MARK: Dropdown variables
     let severity1Drop = DropDown()
     let intent1Drop = DropDown()
     let severity2Drop = DropDown()
@@ -52,7 +53,7 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
         setUp()
     }
     
-    // MARK: DropDown
+    // MARK: DropDown actions
     @IBAction func showSeverity1Options(_ sender: Any) {
         severity1Drop.show()
     }
@@ -79,7 +80,6 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
             isOneOffence = false
             isTwoOffences = true
             offence2View.isHidden = false
-            // showing offence2 form
         }
         else{
             actionOffenceButton.configuration?.baseForegroundColor = UIColor(hex: "#AB8E63")
@@ -100,6 +100,7 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
         print("❗️recommendButton PRESSED❗️")
         print("===============================================")
         
+        // MARK: isOneOffence
         if(isOneOffence == true && isTwoOffences == false){
             if(checkForm() == true){
                 let offenceInput = offence1TextField.text!
@@ -111,14 +112,18 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
                 
                 // check if sentence is fined or not
                 if(sentenceRecommend != "Fined"){
-                    let durationRecommend = durationModel(severity: severityInput, remandDuration: remandInput, sentence: sentenceRecommend, sentenceType: "Single")!.totalDuration
+//                    let durationRecommend = durationModel(severity: severityInput, remandDuration: remandInput, sentence: sentenceRecommend, sentenceType: "Single")!.totalDuration
                     
-                    recommendTextView.text = "Sentence: " + sentenceRecommend + "\t" + String(format: "%.2f", abs(durationRecommend)) + " months"
+                    let durationRecommend = durationModel(offence: offenceInput, severity: severityInput, intent: intentInput, remandDuration: remandInput, sentence: sentenceRecommend, sentenceType: "Single")!.sentenceDuration
+                    
+                    recommendTextView.text = "Sentence: " + sentenceRecommend + "\t\t" + String(format: "%.2f", durationRecommend) + " months"
                 }
                 else{
-                    let fineRecommend = fineModel(offence: offenceInput, severity: severityInput, intent: intentInput, sentence: sentenceRecommend, sentenceType: "Single")!.fineAmount
+//                    let fineRecommend = fineModel(offence: offenceInput, severity: severityInput, intent: intentInput, sentence: sentenceRecommend, sentenceType: "Single")!.fineAmount
                     
-                    recommendTextView.text = "Sentence: " + sentenceRecommend + "\t" + "Amount: $" + String(format: "%.2f", abs(fineRecommend))
+                    let fineRecommend = fineModel(offence: offenceInput, severity: severityInput, intent: intentInput, sentence: sentenceRecommend, sentenceType: "Single")!.finesAmount
+                    
+                    recommendTextView.text = "Sentence: " + sentenceRecommend + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend)
                 }
                 resetForm()
             }
@@ -126,6 +131,7 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
                 showMessage(message: "Uh-oh! It seems there's an issue with your submission. \n\nPlease review the form and ensure the information in the text box is accurate and complete.",  controller: self)
             }
         }
+        // MARK: isTwoOffences
         else if(isOneOffence == false && isTwoOffences == true){
             if(checkForm() == true){
                 let offenceInput1 = offence1TextField.text!
@@ -133,74 +139,112 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
                 let intentInput1 = intent1Label.text!
                 let remandInput1 = Int(remand1TextField.text!) ?? 0
                 
-                let offenceInput2 = offence1TextField.text!
-                let severityInput2 = Int(severity1Label.text!) ?? 1
-                let intentInput2 = intent1Label.text!
-                let remandInput2 = Int(remand1TextField.text!) ?? 0
+                let offenceInput2 = offence2TextField.text!
+                let severityInput2 = Int(severity2Label.text!) ?? 1
+                let intentInput2 = intent2Label.text!
+                let remandInput2 = Int(remand2TextField.text!) ?? 0
                 
                 let sentenceRecommend1 = sentenceModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1)!.sentence
-                let sentenceRecommend2 = sentenceModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2)!.sentence
+                let sentenceRecommend2 = sentenceModel2(offence: offenceInput2, severity: severityInput2, intent: intentInput2)!.sentence
+                
+                print("=========================================")
+                print("offenceInput1: \(offenceInput1)")
+                print("severityInput1: \(severityInput1)")
+                print("intentInput1: \(intentInput1)")
+                print("remandInput1: \(remandInput1)\n")
+                print("offenceInput2: \(offenceInput2)")
+                print("severityInput2: \(severityInput2)")
+                print("intentInput2: \(intentInput2)")
+                print("remandInput2: \(remandInput2)\n")
+                print("sentenceRecommend1: \(sentenceRecommend1)")
+                print("sentenceRecommend2: \(sentenceRecommend2)")
+                print("=========================================")
                 
                 // check if both offences are in the same level of severity
                 if(severityInput1 == severityInput2){
                     if(sentenceRecommend1 != "Fined" && sentenceRecommend2 != "Fined"){
-                        let durationRecommend1 = durationModel(severity: severityInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.totalDuration
-                        let durationRecommend2 = durationModel(severity: severityInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.totalDuration
-                        var totalDuration = abs(durationRecommend1)
+//                        let durationRecommend1 = durationModel(severity: severityInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.totalDuration
+//                        let durationRecommend2 = durationModel(severity: severityInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.totalDuration
+//                        var totalDuration = abs(durationRecommend1)
                         
-                        if(abs(durationRecommend1) < abs(durationRecommend2)){
-                            totalDuration += abs(durationRecommend2)
+                        let durationRecommend1 = durationModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.sentenceDuration
+                        let durationRecommend2 = durationModel2(offence: offenceInput2, severity: severityInput2, intent: intentInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.sentenceDuration
+                        var totalDuration = durationRecommend1
+                        
+                        if(durationRecommend1 < durationRecommend2){
+                            totalDuration += durationRecommend2
                         }
                         
-                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + String(format: "%.2f", durationRecommend1) + " months" + "\nSentence 2: "  + sentenceRecommend2 + "\t" + String(format: "%.2f", durationRecommend2) + " months\n" + "Total duration: " + String(format: "%.2", totalDuration) + " months"
+                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + String(format: "%.2f", durationRecommend1) + " months" + "\nSentence 2: "  + sentenceRecommend2 + "\t" + String(format: "%.2f", durationRecommend2) + " months\n" + "Total duration: " + String(format: "%.2f", totalDuration) + " months" + "\n\nSentence type: Concurrent"
                     }
                     else if(sentenceRecommend1 == "Fined" && sentenceRecommend2 != "Fined"){
-                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.fineAmount
-                        let durationRecommend2 = durationModel(severity: severityInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.totalDuration
+//                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.fineAmount
+//                        let durationRecommend2 = durationModel(severity: severityInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.totalDuration
                         
-                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend1) + "\nSentence 2: " + sentenceRecommend2 + "\t" + String(format: "%.2f", abs(durationRecommend2))
+                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.finesAmount
+                        let durationRecommend2 = durationModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.sentenceDuration
+                        
+                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend1) + "\nSentence 2: " + sentenceRecommend2 + "\t" + String(format: "%.2f", durationRecommend2) + "\n\nSentence type: Concurrent"
                     }
                     else if(sentenceRecommend1 != "Fined" && sentenceRecommend2 == "Fined"){
-                        let durationRecommend1 = durationModel(severity: severityInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.totalDuration
-                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.fineAmount
+//                        let durationRecommend1 = durationModel(severity: severityInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.totalDuration
+//                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.fineAmount
                         
-                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + String(format: "%.2f", durationRecommend1) + " months" + "\nSentence 2: " + sentenceRecommend2 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend2)
+                        let durationRecommend1 = durationModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.sentenceDuration
+                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.finesAmount
+                        
+                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + String(format: "%.2f", durationRecommend1) + " months" + "\nSentence 2: " + sentenceRecommend2 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend2) + "\n\nSentence type: Concurrent"
                     }
                     else{
-                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.fineAmount
-                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.fineAmount
+//                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.fineAmount
+//                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.fineAmount
+//                        let totalFines = fineRecommend1 + fineRecommend2
+                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Concurrent")!.finesAmount
+                        let fineRecommend2 = fineModel2(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Concurrent")!.finesAmount
                         let totalFines = fineRecommend1 + fineRecommend2
                         
-                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend1) + "Sentence 2: " + sentenceRecommend2 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend2) + "\nTotal fines: $" + String(format: "%.2f", totalFines)
+                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend1) + "\nSentence 2: " + sentenceRecommend2 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend2) + "\n\nTotal fines: $" + String(format: "%.2f", totalFines) 
                     }
                 }
                 else{
                     if(sentenceRecommend1 != "Fined" && sentenceRecommend2 != "Fined"){
-                        let durationRecommend1 = durationModel(severity: severityInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.totalDuration
-                        let durationRecommend2 = durationModel(severity: severityInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.totalDuration
-                        var totalDuration = abs(durationRecommend1) + abs(durationRecommend2)
+//                        let durationRecommend1 = durationModel(severity: severityInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.totalDuration
+//                        let durationRecommend2 = durationModel(severity: severityInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.totalDuration
+                        let durationRecommend1 = durationModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.sentenceDuration
+                        let durationRecommend2 = durationModel2(offence: offenceInput2, severity: severityInput2, intent: intentInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.sentenceDuration
+                        
+                        var totalDuration = durationRecommend1 + durationRecommend2
                         
                         
-                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + String(format: "%.2f", durationRecommend1) + " months" + "\nSentence 2: "  + sentenceRecommend2 + "\t" + String(format: "%.2f", durationRecommend2) + " months\n" + "Total duration: " + String(format: "%.2", totalDuration) + " months"
+                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + String(format: "%.2f", durationRecommend1) + " months" + "\nSentence 2: "  + sentenceRecommend2 + "\t" + String(format: "%.2f", durationRecommend2) + " months\n" + "Total duration: " + String(format: "%.2f", totalDuration) + " months" + "\n\nSentence type: Cumulative"
                     }
                     else if(sentenceRecommend1 == "Fined" && sentenceRecommend2 != "Fined"){
-                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.fineAmount
-                        let durationRecommend2 = durationModel(severity: severityInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.totalDuration
+//                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.fineAmount
+//                        let durationRecommend2 = durationModel(severity: severityInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.totalDuration
                         
-                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend1) + "\nSentence 2: " + sentenceRecommend2 + "\t" + String(format: "%.2f", abs(durationRecommend2))
+                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.finesAmount
+                        let durationRecommend2 = durationModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, remandDuration: remandInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.sentenceDuration
+                        
+                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend1) + "\nSentence 2: " + sentenceRecommend2 + "\t" + String(format: "%.2f", durationRecommend2) + "\n\nSentence type: Cumulative"
                     }
                     else if(sentenceRecommend1 != "Fined" && sentenceRecommend2 == "Fined"){
-                        let durationRecommend1 = durationModel(severity: severityInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.totalDuration
-                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.fineAmount
+//                        let durationRecommend1 = durationModel(severity: severityInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.totalDuration
+//                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.fineAmount
                         
-                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + String(format: "%.2f", durationRecommend1) + " months" + "\nSentence 2: " + sentenceRecommend2 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend2)
+                        let durationRecommend1 = durationModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, remandDuration: remandInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.sentenceDuration
+                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.finesAmount
+                        
+                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + String(format: "%.2f", durationRecommend1) + " months" + "\nSentence 2: " + sentenceRecommend2 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend2) + "\n\nSentence type: Cumulative"
                     }
                     else{
-                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.fineAmount
-                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.fineAmount
+//                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.fineAmount
+//                        let fineRecommend2 = fineModel(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.fineAmount
+                        let fineRecommend1 = fineModel(offence: offenceInput1, severity: severityInput1, intent: intentInput1, sentence: sentenceRecommend1, sentenceType: "Cumulative")!.finesAmount
+                        let fineRecommend2 = fineModel2(offence: offenceInput2, severity: severityInput2, intent: intentInput2, sentence: sentenceRecommend2, sentenceType: "Cumulative")!.finesAmount
+                        
                         let totalFines = fineRecommend1 + fineRecommend2
                         
-                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend1) + "Sentence 2: " + sentenceRecommend2 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend2) + "\nTotal fines: $" + String(format: "%.2f", totalFines)
+                        recommendTextView.text = "Sentence 1: " + sentenceRecommend1 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend1) + "\nSentence 2: " + sentenceRecommend2 + "\t" + "Amount: $" + String(format: "%.2f", fineRecommend2) + "\n\nTotal fines: $" + String(format: "%.2f", totalFines)
                     }
                 }
                 resetForm()
@@ -284,23 +328,23 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: resetForm()
     func resetForm(){
-        if(isOneOffence == true && offence2View.isHidden == false){
+        if(isOneOffence == true && offence2View.isHidden == true){
             offence2TextField.text = nil
             severity2Label.text = "Select severity"
             intent2Label.text = "Select intent"
             remand2TextField.text = nil
         }
-        else{
-            offence1TextField.text = nil
-            severity1Label.text = "Select severity"
-            intent1Label.text = "Select intent"
-            remand1TextField.text = nil
-            
-            offence2TextField.text = nil
-            severity2Label.text = "Select severity"
-            intent2Label.text = "Select intent"
-            remand2TextField.text = nil
-        }
+//        else{
+//            offence1TextField.text = nil
+//            severity1Label.text = "Select severity"
+//            intent1Label.text = "Select intent"
+//            remand1TextField.text = nil
+//
+//            offence2TextField.text = nil
+//            severity2Label.text = "Select severity"
+//            intent2Label.text = "Select intent"
+//            remand2TextField.text = nil
+//        }
     }
     
     // MARK: checkForm()
@@ -311,6 +355,15 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
         let numberRegEx = #"^[0-9]*(\.[0-9]+)?$"#
         let numberPredicate = NSPredicate(format: "SELF MATCHES %@", numberRegEx)
         
+        let randomInput = "asdfqwerzxcv"
+        
+        let randomRegEx1 = "^[asdfASDF]*$"
+        let randomPredicate1 = NSPredicate(format: "SELF MATCHES %@", randomRegEx1)
+        let randomRegEx2 = "^[zxcvZXCV]*$"
+        let randomPredicate2 = NSPredicate(format: "SELF MATCHES %@", randomRegEx2)
+        let randomRegEx3 = "^[qwerQWER]*$"
+        let randomPredicate3 = NSPredicate(format: "SELF MATCHES %@", randomRegEx3)
+        
         if(isOneOffence == true && isTwoOffences == false){
             guard let offenceOne = offence1TextField.text, !offenceOne.isEmpty else{
                 return false
@@ -318,6 +371,26 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
             
             if(!characterPredicate.evaluate(with: offenceOne)){
                 showMessage(message: "Offence input should only contain letters.", controller: self)
+                return false
+            }
+            else if((offenceOne.range(of: randomInput)) != nil){
+                showMessage(message: "It seems like you've entered a random string of characters in the offence, but it's not clear what you want to do with this input. \n\nPlease review the offence input and ensure the information in the text box is accurate and complete.", controller: self)
+                
+                return false
+            }
+            else if(randomPredicate1.evaluate(with: offenceOne)){
+                showMessage(message: "It seems like you've entered a random string of characters in the offence, but it's not clear what you want to do with this input. \n\nPlease review the offence input and ensure the information in the text box is accurate and complete.", controller: self)
+                
+                return false
+            }
+            else if(randomPredicate2.evaluate(with: offenceOne)){
+                showMessage(message: "It seems like you've entered a random string of characters in the offence, but it's not clear what you want to do with this input. \n\nPlease review the offence input and ensure the information in the text box is accurate and complete.", controller: self)
+                
+                return false
+            }
+            else if(randomPredicate3.evaluate(with: offenceOne)){
+                showMessage(message: "It seems like you've entered a random string of characters in the offence, but it's not clear what you want to do with this input. \n\nPlease review the offence input and ensure the information in the text box is accurate and complete.", controller: self)
+                
                 return false
             }
             else if(severity1Label.text == "Select severity"){
@@ -341,12 +414,41 @@ class SentencingViewController: UIViewController, UITextFieldDelegate {
                 return false
             }
             
+            let randomInput = "asdfqwerzxcv"
+            
+            let randomRegEx1 = "^[asdfASDF]*$"
+            let randomPredicate1 = NSPredicate(format: "SELF MATCHES %@", randomRegEx1)
+            let randomRegEx2 = "^[zxcvZXCV]*$"
+            let randomPredicate2 = NSPredicate(format: "SELF MATCHES %@", randomRegEx2)
+            let randomRegEx3 = "^[qwerQWER]*$"
+            let randomPredicate3 = NSPredicate(format: "SELF MATCHES %@", randomRegEx3)
+            
             if(!characterPredicate.evaluate(with: offenceOne)){
                 showMessage(message: "Offence input should only contain letters.", controller: self)
                 return false
             }
             else if(!characterPredicate.evaluate(with: offenceTwo)){
                 showMessage(message: "Offence input should only contain letters.", controller: self)
+                return false
+            }
+            else if((offenceOne.range(of: randomInput)) != nil || (offenceTwo.range(of: randomInput)) != nil){
+                showMessage(message: "It seems like you've entered a random string of characters in the offence, but it's not clear what you want to do with this input. \n\nPlease review the offence input and ensure the information in the text box is accurate and complete.", controller: self)
+                
+                return false
+            }
+            else if(randomPredicate1.evaluate(with: offenceOne) || randomPredicate1.evaluate(with: offenceTwo)){
+                showMessage(message: "It seems like you've entered a random string of characters in the offence, but it's not clear what you want to do with this input. \n\nPlease review the offence input and ensure the information in the text box is accurate and complete.", controller: self)
+                
+                return false
+            }
+            else if(randomPredicate2.evaluate(with: offenceOne) || randomPredicate1.evaluate(with: offenceTwo)){
+                showMessage(message: "It seems like you've entered a random string of characters in the offence, but it's not clear what you want to do with this input. \n\nPlease review the offence input and ensure the information in the text box is accurate and complete.", controller: self)
+                
+                return false
+            }
+            else if(randomPredicate3.evaluate(with: offenceOne) || randomPredicate1.evaluate(with: offenceTwo)){
+                showMessage(message: "It seems like you've entered a random string of characters in the offence, but it's not clear what you want to do with this input. \n\nPlease review the offence input and ensure the information in the text box is accurate and complete.", controller: self)
+                
                 return false
             }
             else if(severity1Label.text == "Select severity"){

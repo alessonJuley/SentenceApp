@@ -13,6 +13,9 @@
 		3F1D9AA72A41E9C8003EF407 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1D9AA62A41E9C8003EF407 /* OnboardingSlide.swift */; };
 		3F1D9AA92A41EC60003EF407 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1D9AA82A41EC60003EF407 /* OnboardingCollectionViewCell.swift */; };
 		3F1D9AAD2A41FD73003EF407 /*  SentenceRecommender.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F1D9AAC2A41FD73003EF407 /*  SentenceRecommender.mlmodel */; };
+		3F263DBD2AC31B55001F539E /* FineRegressorModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F263DBA2AC31B55001F539E /* FineRegressorModel.mlmodel */; };
+		3F263DBE2AC31B55001F539E /* SentenceClassificationModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F263DBB2AC31B55001F539E /* SentenceClassificationModel.mlmodel */; };
+		3F263DBF2AC31B55001F539E /* DurationRegressorModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F263DBC2AC31B55001F539E /* DurationRegressorModel.mlmodel */; };
 		3F2EF8F42ABC503000157011 /* AllSentenceModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF8F32ABC503000157011 /* AllSentenceModel.mlmodel */; };
 		3F2EF8F62ABC50F800157011 /* TrainingSentenceModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF8F52ABC50F800157011 /* TrainingSentenceModel.mlmodel */; };
 		3F2EF8FF2ABC5DDB00157011 /* TrainingDurationClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF8FD2ABC5DDB00157011 /* TrainingDurationClassifierModel.mlmodel */; };
@@ -37,7 +40,6 @@
 		3F978B512A921E1700037063 /* manualTrainingDurationModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F978B502A921E1700037063 /* manualTrainingDurationModel.mlmodel */; };
 		3F978B532A921E2100037063 /* AutomaticTrainingDuration.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F978B522A921E2100037063 /* AutomaticTrainingDuration.mlmodel */; };
 		3F9A5CDA2A8CB55B001FC004 /* SentenceClassifier2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A5CD92A8CB55B001FC004 /* SentenceClassifier2.mlmodel */; };
-		3F9E75892AA85059003690AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E75882AA85059003690AC /* MainViewController.swift */; };
 		3F9E758C2AA850DE003690AC /* SentenceClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E758B2AA850DE003690AC /* SentenceClassifier.mlmodel */; };
 		3F9E758E2AA850FE003690AC /* DurationTabularRegressor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E758D2AA850FE003690AC /* DurationTabularRegressor.mlmodel */; };
 		3F9E75902AA85113003690AC /* FinesTabularRegressor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E758F2AA85113003690AC /* FinesTabularRegressor.mlmodel */; };
@@ -61,6 +63,9 @@
 		3F1D9AA82A41EC60003EF407 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F1D9AAC2A41FD73003EF407 /*  SentenceRecommender.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = " SentenceRecommender.mlmodel"; sourceTree = "<group>"; };
 		3F22F6782ABC4914006DBB97 /* sentenceTraining1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = sentenceTraining1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3F263DBA2AC31B55001F539E /* FineRegressorModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FineRegressorModel.mlmodel; sourceTree = "<group>"; };
+		3F263DBB2AC31B55001F539E /* SentenceClassificationModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentenceClassificationModel.mlmodel; sourceTree = "<group>"; };
+		3F263DBC2AC31B55001F539E /* DurationRegressorModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DurationRegressorModel.mlmodel; sourceTree = "<group>"; };
 		3F2EF8EF2ABC4B3700157011 /* sentenceTraining2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = sentenceTraining2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F2EF8F22ABC4C5100157011 /* durationTraining1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = durationTraining1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F2EF8F32ABC503000157011 /* AllSentenceModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AllSentenceModel.mlmodel; sourceTree = "<group>"; };
@@ -90,7 +95,6 @@
 		3F978B502A921E1700037063 /* manualTrainingDurationModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = manualTrainingDurationModel.mlmodel; sourceTree = "<group>"; };
 		3F978B522A921E2100037063 /* AutomaticTrainingDuration.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AutomaticTrainingDuration.mlmodel; sourceTree = "<group>"; };
 		3F9A5CD92A8CB55B001FC004 /* SentenceClassifier2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentenceClassifier2.mlmodel; sourceTree = "<group>"; };
-		3F9E75882AA85059003690AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3F9E758B2AA850DE003690AC /* SentenceClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentenceClassifier.mlmodel; sourceTree = "<group>"; };
 		3F9E758D2AA850FE003690AC /* DurationTabularRegressor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DurationTabularRegressor.mlmodel; sourceTree = "<group>"; };
 		3F9E758F2AA85113003690AC /* FinesTabularRegressor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FinesTabularRegressor.mlmodel; sourceTree = "<group>"; };
@@ -167,6 +171,9 @@
 		3F22F6762ABC47FF006DBB97 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3F263DBC2AC31B55001F539E /* DurationRegressorModel.mlmodel */,
+				3F263DBA2AC31B55001F539E /* FineRegressorModel.mlmodel */,
+				3F263DBB2AC31B55001F539E /* SentenceClassificationModel.mlmodel */,
 				3F2EF9022ABC5E1500157011 /* CreateMLModels */,
 				3F2EF9012ABC5E0300157011 /* ManualModels */,
 			);
@@ -294,7 +301,6 @@
 		3FE842A12A8A1B13003A743F /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3F9E75882AA85059003690AC /* MainViewController.swift */,
 				3F3D6D482ABC0F1400830A04 /* SentencingViewController.swift */,
 			);
 			path = Home;
@@ -435,17 +441,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F2EF90E2ABC64B500157011 /* TrainingCMSentenceClassifierModel.mlmodel in Sources */,
+				3F263DBD2AC31B55001F539E /* FineRegressorModel.mlmodel in Sources */,
 				3F3D6D492ABC0F1400830A04 /* SentencingViewController.swift in Sources */,
 				3F9E75962AA85148003690AC /* Fine.swift in Sources */,
 				3F1D9AAD2A41FD73003EF407 /*  SentenceRecommender.mlmodel in Sources */,
+				3F263DBF2AC31B55001F539E /* DurationRegressorModel.mlmodel in Sources */,
 				3F2EF9172ABC65A500157011 /* CreateMLDuration.swift in Sources */,
 				3F2EF9002ABC5DDB00157011 /* AllDurationClassifierModel.mlmodel in Sources */,
 				3F2EF9112ABC654A00157011 /* ManualSentence.swift in Sources */,
 				3FE842BE2A8A7119003A743F /* DurationRecommender.mlmodel in Sources */,
 				3FE842A72A8A1B8D003A743F /* SentenceRecommend.mlmodel in Sources */,
+				3F263DBE2AC31B55001F539E /* SentenceClassificationModel.mlmodel in Sources */,
 				3F1D9AA72A41E9C8003EF407 /* OnboardingSlide.swift in Sources */,
 				3F5ADE3C2A1679AF008C6322 /* AppDelegate.swift in Sources */,
-				3F9E75892AA85059003690AC /* MainViewController.swift in Sources */,
 				3FE842AA2A8A1FC1003A743F /* Functions.swift in Sources */,
 				3F9E758C2AA850DE003690AC /* SentenceClassifier.mlmodel in Sources */,
 				3F9E75922AA85133003690AC /* Sentence.swift in Sources */,
