@@ -123,6 +123,9 @@
 				3F263DBC2AC31B55001F539E /* DurationRegressorModel.mlmodel */,
 				3F263DBA2AC31B55001F539E /* FineRegressorModel.mlmodel */,
 				3F263DBB2AC31B55001F539E /* SentenceClassificationModel.mlmodel */,
+				3F9E75912AA85133003690AC /* Sentence.swift */,
+				3F9E75932AA8513E003690AC /* Duration.swift */,
+				3F9E75952AA85148003690AC /* Fine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,16 +185,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3F9E758A2AA85084003690AC /* MultipleOffences */ = {
-			isa = PBXGroup;
-			children = (
-				3F9E75912AA85133003690AC /* Sentence.swift */,
-				3F9E75932AA8513E003690AC /* Duration.swift */,
-				3F9E75952AA85148003690AC /* Fine.swift */,
-			);
-			path = MultipleOffences;
-			sourceTree = "<group>";
-		};
 		3FE842A12A8A1B13003A743F /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				3F22F6742ABC47BC006DBB97 /* SentencingModels */,
-				3F9E758A2AA85084003690AC /* MultipleOffences */,
 			);
 			path = CoreML;
 			sourceTree = "<group>";
