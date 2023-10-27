@@ -26,11 +26,6 @@
 		3F2EF90A2ABC63BA00157011 /* TrainingFineRegressorModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF9062ABC63BA00157011 /* TrainingFineRegressorModel.mlmodel */; };
 		3F2EF90D2ABC64B500157011 /* AllCMSentenceClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF90B2ABC64B500157011 /* AllCMSentenceClassifierModel.mlmodel */; };
 		3F2EF90E2ABC64B500157011 /* TrainingCMSentenceClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF90C2ABC64B500157011 /* TrainingCMSentenceClassifierModel.mlmodel */; };
-		3F2EF9112ABC654A00157011 /* ManualSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF9102ABC654A00157011 /* ManualSentence.swift */; };
-		3F2EF9132ABC655B00157011 /* CreateMLSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF9122ABC655B00157011 /* CreateMLSentence.swift */; };
-		3F2EF9152ABC659000157011 /* ManualDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF9142ABC659000157011 /* ManualDuration.swift */; };
-		3F2EF9172ABC65A500157011 /* CreateMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF9162ABC65A500157011 /* CreateMLDuration.swift */; };
-		3F2EF9192ABC65BB00157011 /* CreateMLFine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EF9182ABC65BB00157011 /* CreateMLFine.swift */; };
 		3F3D6D492ABC0F1400830A04 /* SentencingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D6D482ABC0F1400830A04 /* SentencingViewController.swift */; };
 		3F5ADE3C2A1679AF008C6322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5ADE3B2A1679AF008C6322 /* AppDelegate.swift */; };
 		3F5ADE3E2A1679AF008C6322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5ADE3D2A1679AF008C6322 /* SceneDelegate.swift */; };
@@ -72,11 +67,6 @@
 		3F2EF9062ABC63BA00157011 /* TrainingFineRegressorModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TrainingFineRegressorModel.mlmodel; sourceTree = "<group>"; };
 		3F2EF90B2ABC64B500157011 /* AllCMSentenceClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AllCMSentenceClassifierModel.mlmodel; sourceTree = "<group>"; };
 		3F2EF90C2ABC64B500157011 /* TrainingCMSentenceClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TrainingCMSentenceClassifierModel.mlmodel; sourceTree = "<group>"; };
-		3F2EF9102ABC654A00157011 /* ManualSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSentence.swift; sourceTree = "<group>"; };
-		3F2EF9122ABC655B00157011 /* CreateMLSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMLSentence.swift; sourceTree = "<group>"; };
-		3F2EF9142ABC659000157011 /* ManualDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualDuration.swift; sourceTree = "<group>"; };
-		3F2EF9162ABC65A500157011 /* CreateMLDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMLDuration.swift; sourceTree = "<group>"; };
-		3F2EF9182ABC65BB00157011 /* CreateMLFine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMLFine.swift; sourceTree = "<group>"; };
 		3F3D6D482ABC0F1400830A04 /* SentencingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentencingViewController.swift; sourceTree = "<group>"; };
 		3F5ADE382A1679AF008C6322 /* SentenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5ADE3B2A1679AF008C6322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +126,6 @@
 		3F22F6742ABC47BC006DBB97 /* SentencingModels */ = {
 			isa = PBXGroup;
 			children = (
-				3F2EF90F2ABC651B00157011 /* SentencingFunctions */,
 				3F22F6762ABC47FF006DBB97 /* Models */,
 				3F22F6752ABC47E9006DBB97 /* ManualTrainingPlaygrounds */,
 			);
@@ -188,18 +177,6 @@
 				3F2EF9062ABC63BA00157011 /* TrainingFineRegressorModel.mlmodel */,
 			);
 			path = CreateMLModels;
-			sourceTree = "<group>";
-		};
-		3F2EF90F2ABC651B00157011 /* SentencingFunctions */ = {
-			isa = PBXGroup;
-			children = (
-				3F2EF9102ABC654A00157011 /* ManualSentence.swift */,
-				3F2EF9142ABC659000157011 /* ManualDuration.swift */,
-				3F2EF9122ABC655B00157011 /* CreateMLSentence.swift */,
-				3F2EF9162ABC65A500157011 /* CreateMLDuration.swift */,
-				3F2EF9182ABC65BB00157011 /* CreateMLFine.swift */,
-			);
-			path = SentencingFunctions;
 			sourceTree = "<group>";
 		};
 		3F5ADE2F2A1679AF008C6322 = {
@@ -417,9 +394,7 @@
 				3F9E75962AA85148003690AC /* Fine.swift in Sources */,
 				3F1D9AAD2A41FD73003EF407 /*  SentenceRecommender.mlmodel in Sources */,
 				3F263DBF2AC31B55001F539E /* DurationRegressorModel.mlmodel in Sources */,
-				3F2EF9172ABC65A500157011 /* CreateMLDuration.swift in Sources */,
 				3F2EF9002ABC5DDB00157011 /* AllDurationClassifierModel.mlmodel in Sources */,
-				3F2EF9112ABC654A00157011 /* ManualSentence.swift in Sources */,
 				3F263DBE2AC31B55001F539E /* SentenceClassificationModel.mlmodel in Sources */,
 				3F1D9AA72A41E9C8003EF407 /* OnboardingSlide.swift in Sources */,
 				3F5ADE3C2A1679AF008C6322 /* AppDelegate.swift in Sources */,
@@ -437,14 +412,11 @@
 				3F1D9AA52A41E8AC003EF407 /* UIView+Extension.swift in Sources */,
 				3F5ADE3E2A1679AF008C6322 /* SceneDelegate.swift in Sources */,
 				3F2EF90A2ABC63BA00157011 /* TrainingFineRegressorModel.mlmodel in Sources */,
-				3F2EF9152ABC659000157011 /* ManualDuration.swift in Sources */,
 				3F1D9AA92A41EC60003EF407 /* OnboardingCollectionViewCell.swift in Sources */,
 				3F2EF9082ABC63BA00157011 /* AllFineRegressorModel.mlmodel in Sources */,
 				3F2EF8F62ABC50F800157011 /* TrainingSentenceModel.mlmodel in Sources */,
-				3F2EF9192ABC65BB00157011 /* CreateMLFine.swift in Sources */,
 				3FD84B852AB717CC0048E057 /* UIColor+Extension.swift in Sources */,
 				3F2EF8FF2ABC5DDB00157011 /* TrainingDurationClassifierModel.mlmodel in Sources */,
-				3F2EF9132ABC655B00157011 /* CreateMLSentence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
