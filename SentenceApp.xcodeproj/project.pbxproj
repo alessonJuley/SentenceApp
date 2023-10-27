@@ -24,7 +24,6 @@
 		3F5ADE482A1679B0008C6322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5ADE462A1679B0008C6322 /* LaunchScreen.storyboard */; };
 		3F9E758C2AA850DE003690AC /* SentenceClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E758B2AA850DE003690AC /* SentenceClassifier.mlmodel */; };
 		3F9E758E2AA850FE003690AC /* DurationTabularRegressor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E758D2AA850FE003690AC /* DurationTabularRegressor.mlmodel */; };
-		3F9E75902AA85113003690AC /* FinesTabularRegressor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E758F2AA85113003690AC /* FinesTabularRegressor.mlmodel */; };
 		3F9E75922AA85133003690AC /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E75912AA85133003690AC /* Sentence.swift */; };
 		3F9E75942AA8513E003690AC /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E75932AA8513E003690AC /* Duration.swift */; };
 		3F9E75962AA85148003690AC /* Fine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E75952AA85148003690AC /* Fine.swift */; };
@@ -57,7 +56,6 @@
 		3F5ADE492A1679B0008C6322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9E758B2AA850DE003690AC /* SentenceClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentenceClassifier.mlmodel; sourceTree = "<group>"; };
 		3F9E758D2AA850FE003690AC /* DurationTabularRegressor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DurationTabularRegressor.mlmodel; sourceTree = "<group>"; };
-		3F9E758F2AA85113003690AC /* FinesTabularRegressor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FinesTabularRegressor.mlmodel; sourceTree = "<group>"; };
 		3F9E75912AA85133003690AC /* Sentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentence.swift; sourceTree = "<group>"; };
 		3F9E75932AA8513E003690AC /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		3F9E75952AA85148003690AC /* Fine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fine.swift; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 		3F9E758A2AA85084003690AC /* MultipleOffences */ = {
 			isa = PBXGroup;
 			children = (
-				3F9E758F2AA85113003690AC /* FinesTabularRegressor.mlmodel */,
 				3F9E758D2AA850FE003690AC /* DurationTabularRegressor.mlmodel */,
 				3F9E758B2AA850DE003690AC /* SentenceClassifier.mlmodel */,
 				3F9E75912AA85133003690AC /* Sentence.swift */,
@@ -354,7 +351,6 @@
 				3F9E758C2AA850DE003690AC /* SentenceClassifier.mlmodel in Sources */,
 				3F9E75922AA85133003690AC /* Sentence.swift in Sources */,
 				3F1D9AA22A41E555003EF407 /* OnboardingViewController.swift in Sources */,
-				3F9E75902AA85113003690AC /* FinesTabularRegressor.mlmodel in Sources */,
 				3F9E75942AA8513E003690AC /* Duration.swift in Sources */,
 				3F9E758E2AA850FE003690AC /* DurationTabularRegressor.mlmodel in Sources */,
 				3F1D9AA52A41E8AC003EF407 /* UIView+Extension.swift in Sources */,
