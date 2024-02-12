@@ -1,5 +1,4 @@
-# SentenceApp
-# iOS Mobile App with AI Decision-Making
+# SentenceApp: iOS Mobile App with AI Decision-Making
 
 Welcome to the iOS Mobile App with AI Decision-Making project repository. This mobile application is designed to offer intelligent decision-making support, and it comes with several noteworthy features.
 
@@ -15,7 +14,7 @@ Welcome to the iOS Mobile App with AI Decision-Making project repository. This m
 
 - **Academic Excellence**: The project received an A+ grade upon course completion, reflecting the dedication and high-quality work put into its development.
 
-- **Key Feature: The application's standout feature is its ability to recommend sentences, durations, and fine amounts based on historical case rulings. 
+- **Key Feature**: The application's standout feature is its ability to recommend sentences, durations, and fine amounts based on historical case rulings. 
 
 ## Getting Started
 
@@ -32,7 +31,7 @@ To explore this project, follow these simple steps:
 
 
 
-<h1>Developer</h1>
+## Developer
 <h3>Alesson Abao</h3>
 Graduate Diploma in Software and Web Development (Level 7)<br>
 Manukau Institute of Technology - Manukau Campus <br>
