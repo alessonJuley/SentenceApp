@@ -34,6 +34,10 @@ To explore this project, follow these simple steps:
 ## Developer
 <h3>Alesson Abao</h3>
 Graduate Diploma in Software and Web Development (Level 7)<br>
-Manukau Institute of Technology - Manukau Campus <br>
+Manukau Institute of Technology - Manukau Campus <br><br>
+
+Bachelor of Science in Information Technology specialized in Software Engineering<br>
+Trinity University of Asia <br><br>
+
 Linkedin: https://www.linkedin.com/in/alessonabao <br>
 Github: https://github.com/alessonJuley <br>
