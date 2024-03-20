@@ -28,6 +28,9 @@ To explore this project, follow these simple steps:
    SentenceApp.xcworkspace
 3. Build and run app.
 
+## Screenshot
+![home1](https://github.com/alessonJuley/SentenceApp/assets/92022487/a5133729-94ff-4808-8a58-b90f6c827122)
+
 
 
 
