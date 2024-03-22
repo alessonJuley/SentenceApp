@@ -31,6 +31,7 @@ To explore this project, follow these simple steps:
 ## Screenshot
 <img width="233" src="https://github.com/alessonJuley/SentenceApp/assets/92022487/a5133729-94ff-4808-8a58-b90f6c827122">    
 <img width="233" src="https://github.com/alessonJuley/SentenceApp/assets/92022487/2c81f5df-7258-4581-8c36-d9dcd638bb95">
+<img width="233" src="https://github.com/alessonJuley/SentenceApp/assets/92022487/0701595f-b191-4a49-ac6d-867cb1de94da">
 
 
 
