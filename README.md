@@ -35,7 +35,7 @@ To explore this project, follow these simple steps:
 
 
 
-## Developer
+## Author
 <h3>Alesson Abao</h3>
 Graduate Diploma in Software and Web Development (Level 7)<br>
 Manukau Institute of Technology - Manukau Campus <br><br>
