@@ -1,6 +1,6 @@
 # SentenceApp: iOS Mobile App with AI Decision-Making
 
-Welcome to the iOS Mobile App with AI Decision-Making project repository. This mobile application is designed to offer intelligent decision-making support, and it comes with several noteworthy features.
+This mobile application is designed to offer intelligent decision-making support, and it comes with several noteworthy features.
 
 ## Project Highlights
 
